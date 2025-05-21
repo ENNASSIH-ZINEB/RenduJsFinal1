@@ -29,43 +29,51 @@
 // Tu as le choix du sujet, donc clique bien sur le sujet de ton choix pour avoir l'URL finale.
 // Vérifie si la réponse de l'API est correcte. Si oui, passe les données à une fonction qui affichera le contenu du site.
 
-fetch('https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/chocolatier.json')
-.then(response=> response.json())
-.then(products=> {
+fetch(
+  "https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.gitlab.io/json/chocolatier.json"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    let productContainer = document.getElementById("product-container");
+    // console.log(data);
 
-    let productContainer= document.getElementById("product-container");
-console.log(products.nomEntreprise);
+    let Ese = document.createElement("div");
+    Ese.classList.add("Ese");
 
-let Ese= document.createElement("div")
-Ese.classList.add("Ese") ;
-
-Ese.innerHTML=`
-    <h1>${products.nomEntreprise}</h1>
-    <h2>${products.slogan} </h2>
-    <button>Devis Gratuit</button>
+    Ese.innerHTML = `
+    <h1>${data.nomEntreprise}</h1>
+    <h2>${data.slogan} </h2>
+    <button>${data.bouton}</button>
             `;
+    productContainer.appendChild(Ese);
 
-    console.log(Ese);
-   productContainer.appendChild(Ese);
+    function produit() {
+      let produit = data.produits;
+      // 🔴 Niveau 3 – Afficher les activités
+// Pour chaque activité dans les données JSON, crée dynamiquement une div contenant un titre, une description et une image.
+// Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image.
+      produit.forEach((element) => {
+        console.log(element);
+        
+  
+        let activité = document.getElementById("activité");
+        let carteproduit= document.getElementById("section");
 
-   function produit() {
-    let produit = products.produits
-      products.forEach(produit => {
+        let carte = document.createElement("div");
+        carte.classList.add("card");
 
-        let activité= document.getElementById("activité");
+        carte.innerHTML = `
+              <img src="${element["image-url"]}" alt="${element.titre}">
+              <h3>${element.titre}</h3>
+              <p>${element.presentation}</p>
+            `;
+        activité.appendChild(carte);
 
-        let carte= document.createElement("div");
-        carte.classList.add("card"); 
+      });
+    }
+    produit()
+  });
 
 
 
-    
-   });
-    
-    
-   }
- 
- 
-
-});
-
+  
