@@ -47,6 +47,22 @@ fetch(
             `;
     productContainer.appendChild(Ese);
 
+
+       let benefclt= document.getElementById("benefice");
+    let beneficeclient = data.listeBeneficesClients;
+    let benefice = document.createElement("div")
+    beneficeclient.forEach(e => {
+    
+      let Benef= document.createElement("h4");
+      Benef.textContent=e;
+      benefclt.appendChild(benefice);
+      benefice.appendChild(Benef);
+
+
+
+    });
+
+    
     function produit() {
       let produit = data.produits;
       // 🔴 Niveau 3 – Afficher les activités
@@ -57,7 +73,7 @@ fetch(
         
   
         let activité = document.getElementById("activité");
-        let carteproduit= document.getElementById("section");
+        let carteproduit= document.getElementById("carteproduit");
 
         let carte = document.createElement("div");
         carte.classList.add("card");
@@ -72,6 +88,34 @@ fetch(
       });
     }
     produit()
+
+ function Client() {
+      let client = data.clients;
+      // 🔴 Niveau 3 – Afficher les activités
+// Pour chaque activité dans les données JSON, crée dynamiquement une div contenant un titre, une description et une image.
+// Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image.
+      client.forEach((i) => {
+        console.log(i);
+        
+  
+        let clt= document.getElementById("carteclient");
+
+        let clientcard = document.createElement("div");
+        clientcard.classList.add("clientcard");
+
+        clientcard.innerHTML = `
+              
+              <h4>${i.nom}</h4>
+              <h5>${i.typePrestation}</h5>
+              <p>${i.commentaire}</p>
+              <p> Note: ${i.note}</p>
+            `;
+        carteclient.appendChild(clientcard);
+
+      });
+    }
+    Client()
+
   });
 
 
