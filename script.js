@@ -43,7 +43,7 @@ fetch(
     Ese.innerHTML = `
     <h1>${data.nomEntreprise}</h1>
     <h2>${data.slogan} </h2>
-    <button>${data.bouton}</button>
+    <button><a href="#formule">${data.bouton}</a></button>
             `;
     productContainer.appendChild(Ese);
 
@@ -105,9 +105,10 @@ fetch(
 
         clientcard.innerHTML = `
 
+        <img src="profil.svg">      
               <h4>${i.nom}</h4>
               <h5>${i.typePrestation}</h5>
-              <p>${i.commentaire}</p>
+              <p>'${i.commentaire}'</p>
               <p> Note: ${i.note}</p>
             `;
         carteclient.appendChild(clientcard);

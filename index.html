@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Gidole&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<link rel="icon"  href="logoChocolat.png">   
-<!-- link map -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-     <!-- script map -->
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-<title> Chocolatier</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Boldonse&family=Gidole&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="logoChocolat.png">
+    <!-- link map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- script map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <title> Chocolatier</title>
 </head>
+
 <body>
     <nav>
-        <img id="logo" src="logoChocolat.png"  alt="">
+        <img id="logo" src="logoChocolat.png" alt="">
         <ul>
             <li> <a href="#product-container">Acceuil </a> </li>
             <li> <a href="#activité">Nos produits</a></li>
             <li> <a href="#carteclient">Avis</a> </li>
         </ul>
     </nav>
-    
+
     <section id="section">
-    <div id="product-container"></div>
-    <div id="benefice"></div>
-    </section >
-    
+        <div id="product-container"></div>
+        <div id="benefice"></div>
+    </section>
     <section id="carteproduit">
-    <h2>Nos Produits</h2>    
-    <div id="activité"></div>
-    <h2> Avis</h2>
-    <div id="carteclient"></div>
-   <div id="map"></div>
+        <h2>Nos Produits</h2>
+        <div id="activité"></div>
+        <h2> Avis</h2>
+        <div id="carteclient"></div>
 
     </section>
+    <section id="sec" >
+        <h2>Nous contacter</h2>
+        <div id="cont">
+        <div id="map"></div>
+        <div id="formule">
+            <form action="">
+                <label for="Nom">Nom</label>
+                <input type="text" name="Nom" id=""><br><br>
+                <label for="Mail">Mail</label>
+                <input type="text" name="Nom" id="">
+            </form>
+              <label for="Message">Message</label>
+        <textarea name="Message" id=""></textarea>
+        <button>envoyer</button>
 
+        </div>
+        </div>
 
-      <footer>
+      
+    </section>
+
+    <footer>
         <img id="logo" src="logoChocolat.png" alt="palais du chocolat">
         <div id="lien">
             <ul>
-            <li> <a href="#product-container">Acceuil </a> </li>
-            <li> <a href="#activité">Nos produits</a></li>
-            <li> <a href="#carteclient">Avis</a> </li>
-        </ul>
+                <li> <a href="#product-container">Acceuil </a> </li>
+                <li> <a href="#activité">Nos produits</a></li>
+                <li> <a href="#carteclient">Avis</a> </li>
+            </ul>
         </div>
         <div id="contact">
             <p><a href="tel:+336762218704">+33(0)7 48 06 50 89</a></p>
             <p><a href="mailto:zineb.ennasssih@latoile.em-lyon.com">contact@palaisduchocolat.fr</a></p>
         </div>
-        
-    </footer>  
+
+    </footer>
 
     <script src="script.js"></script>
 
 
-    
+
 </body>
 
 </html>
