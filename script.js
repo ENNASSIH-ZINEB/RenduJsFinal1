@@ -91,9 +91,9 @@ fetch(
 
  function Client() {
       let client = data.clients;
-      // 🔴 Niveau 3 – Afficher les activités
-// Pour chaque activité dans les données JSON, crée dynamiquement une div contenant un titre, une description et une image.
-// Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image.
+      // 🔴🔴 Niveau 4 – Afficher les témoignages
+// Pour chaque témoignage dans les données JSON, crée dynamiquement une div contenant le prénom, le commentaire.
+// Ajoute ces témoignages sous les activités dans la page.
       client.forEach((i) => {
         console.log(i);
         
@@ -104,7 +104,7 @@ fetch(
         clientcard.classList.add("clientcard");
 
         clientcard.innerHTML = `
-              
+
               <h4>${i.nom}</h4>
               <h5>${i.typePrestation}</h5>
               <p>${i.commentaire}</p>
@@ -116,7 +116,24 @@ fetch(
     }
     Client()
 
+
+  })
+.catch(error => {
+    // ici on gère les erreurs
+    console.error('Erreur lors du fetch :', error);
   });
+
+  // 🔴🔴🔴 Niveau 5 (optionnel) – Ajouter une carte interactive
+// Ajoute une carte interactive à la page à l’aide de la bibliothèque Leaflet.js.
+// Utilise les coordonnées fournies dans les données JSON pour centrer la carte et y ajouter un fond de carte interactif.
+
+  var map = L.map('map').setView([ 45.7354106 , 4.8256554], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([45.7354106,4.8256554]).addTo(map);
+marker.bindPopup("<b>Palais du chocolat</b><br>45 Rue du Lieutenant-Colonel Girard,<br> 69007 Lyon, France.").openPopup();
 
 
 
